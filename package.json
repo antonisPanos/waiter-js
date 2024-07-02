@@ -1,5 +1,5 @@
 {
-  "name": "waiter-js",
+  "name": "@strange-bytes/waiter",
   "version": "1.0.0",
   "description": "A simple library that enables blocking async requests on the front-end",
   "homepage": "https://github.com/antonisPanos/waiter-js#readme",
