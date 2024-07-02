@@ -23,9 +23,25 @@
     "frontend-communication"
   ],
   "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
     "test": "echo \"Soon...\" && exit 0"
   },
   "main": "dist/waiter.js",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@typescript-eslint/parser": "^7.6.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.4",
+    "typescript-eslint": "^7.6.0"
+  },
   "volta": {
     "node": "20.15.0"
   }
