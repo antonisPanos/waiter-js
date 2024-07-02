@@ -29,7 +29,7 @@ pnpm add waiter-js
 To use the Waiter library, you need to import it into your project and then create instances of Waiter as needed.
 
 ```typescript
-import Waiter from '@your-namespace/waiter';
+import Waiter from 'waiter';
 
 // Create a new instance of Waiter
 const waiter = new Waiter();
