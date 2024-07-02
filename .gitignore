@@ -1,0 +1,41 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+.pnpm-debug.log*
+
+# Coverage
+lib-cov
+coverage
+*.lcov
+
+# Dependencies
+node_modules/
+.npm
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Caches
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+
+# built output
+dist
+reports
+
+# Editors
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.vscode
+*.vscode-test
+
+# OS
+.DS_Store
