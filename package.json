@@ -23,22 +23,44 @@
     "frontend-communication"
   ],
   "scripts": {
+    "build": "pnpm run clean && node scripts/build.mjs",
+    "clean": "rimraf dist",
     "format": "prettier --write .",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "echo \"Soon...\" && exit 0"
   },
+  "exports": {
+    "types": "./index.d.ts",
+    "module": "./dist/waiter.mjs",
+    "import": "./dist/waiter.mjs",
+    "require": "./dist/waiter.js",
+    "default": "./dist/waiter.mjs"
+  },
+  "files": [
+    "dist",
+    "index.d.ts"
+  ],
+  "jsnext:main": "dist/waiter.mjs",
   "main": "dist/waiter.js",
+  "module": "dist/waiter.mjs",
+  "source": "src/index.ts",
+  "types": "./dist/index.d.ts",
+  "typings": "index.d.ts",
+  "umd:main": "dist/waiter.umd.js",
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@typescript-eslint/parser": "^7.6.0",
+    "esbuild": "0.21.5",
+    "esbuild-plugin-d.ts": "^1.2.3",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "globals": "^15.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "^3.2.5",
+    "rimraf": "^5.0.7",
     "typescript": "^5.4.4",
     "typescript-eslint": "^7.6.0"
   },
