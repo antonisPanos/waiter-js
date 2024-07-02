@@ -1,0 +1,32 @@
+{
+  "name": "waiter-js",
+  "version": "1.0.0",
+  "description": "A simple library that enables blocking async requests on the front-end",
+  "homepage": "https://github.com/antonisPanos/waiter-js#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonisPanos/waiter-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/antonisPanos/waiter-js/issues"
+  },
+  "author": "Antonis Panos <panosantonios@gmail.com>",
+  "license": "ISC",
+  "keywords": [
+    "microfrontends",
+    "promise",
+    "communication",
+    "async",
+    "inter-frontend",
+    "event-wrapper",
+    "promise-events",
+    "frontend-communication"
+  ],
+  "scripts": {
+    "test": "echo \"Soon...\" && exit 0"
+  },
+  "main": "dist/waiter.js",
+  "volta": {
+    "node": "20.15.0"
+  }
+}
