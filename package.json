@@ -1,7 +1,7 @@
 {
   "name": "@strange-bytes/waiter",
   "version": "1.0.3",
-  "description": "A simple library that enables blocking async requests on the front-end",
+  "description": "A simple module for handling async requests synchronously throughout your front-end applications",
   "publishConfig": {
     "access": "public"
   },
