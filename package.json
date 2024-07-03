@@ -21,8 +21,6 @@
     "communication",
     "async",
     "inter-frontend",
-    "event-wrapper",
-    "promise-events",
     "frontend-communication"
   ],
   "scripts": {
