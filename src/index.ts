@@ -6,9 +6,9 @@ declare global {
 
 export type WaiterConfigKeyPattern = `__WAITER_CONFIG_${string}__`;
 
-export type Controller = {
+export type Controller<TPayload = any, TResult = any> = {
   endpoint: string;
-  handler: (payload: any, resolve: (value: any) => void) => void;
+  handler: (payload: TPayload, resolve: (value: TResult) => void) => void;
 };
 
 export type WaiterConfig = {
