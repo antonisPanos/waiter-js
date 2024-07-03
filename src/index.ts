@@ -16,7 +16,7 @@ export type WaiterConfig = {
 };
 
 /**
- * @summary Waiter is a simple library that enables blocking async requests between different parts of your application.
+ * Waiter is a simple module for handling async requests synchronously throughout your application
  * @class Waiter
  */
 export default class Waiter {
@@ -59,7 +59,8 @@ export default class Waiter {
   }
 
   /**
-   * Creates a Waiter controller that handles requests towards a specific endpoint.
+   * Registers a new controller that handles requests to a specific endpoint.
+   * Throws an error if the endpoint already exists.
    * @example
    * ```typescript
    * const waiter = new Waiter();
@@ -80,7 +81,8 @@ export default class Waiter {
   }
 
   /**
-   * Removes a Waiter controller.
+   * Removes a previously registered controller.
+   * Throws an error if the endpoint does not exist.
    * @example
    * ```typescript
    * const waiter = new Waiter();
@@ -96,7 +98,8 @@ export default class Waiter {
   }
 
   /**
-   * Sends a request to a specific Waiter endpoint.
+   * Sends a request to a specific endpoint and returns a promise that resolves with the response.
+   * Throws an error if the endpoint does not exist.
    * @param {string} endpointName The name of the endpoint to send the request to
    * @param {any} payload The payload to send with the request
    * @param {{ timeout: number }} [options] Optional request options
