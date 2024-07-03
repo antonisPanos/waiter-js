@@ -1,6 +1,6 @@
 {
   "name": "@strange-bytes/waiter",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple library that enables blocking async requests on the front-end",
   "publishConfig": {
     "access": "public"
@@ -34,22 +34,21 @@
     "test": "echo \"Soon...\" && exit 0"
   },
   "exports": {
-    "types": "./index.d.ts",
+    "types": "./dist/index.d.ts",
     "module": "./dist/waiter.mjs",
     "import": "./dist/waiter.mjs",
     "require": "./dist/waiter.js",
     "default": "./dist/waiter.mjs"
   },
   "files": [
-    "dist",
-    "index.d.ts"
+    "dist"
   ],
   "jsnext:main": "dist/waiter.mjs",
   "main": "dist/waiter.js",
   "module": "dist/waiter.mjs",
   "source": "src/index.ts",
   "types": "./dist/index.d.ts",
-  "typings": "index.d.ts",
+  "typings": "./dist/index.d.ts",
   "umd:main": "dist/waiter.umd.js",
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
