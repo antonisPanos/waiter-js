@@ -76,7 +76,14 @@ export default class Waiter {
   createController(endpoint: string, callback: (payload: any) => any): void {
     if (this.config.controllers.has(endpoint))
       throw new Error(`${this.outputPrefix} Endpoint: "${endpoint}", already exists.`);
-    const controller = (payload: any, resolve: (value: any) => void) => resolve(callback(payload));
+    const controller = async (payload: any, resolve: (value: any) => void) => {
+      try {
+        const result = await callback(payload);
+        resolve(result);
+      } catch (error) {
+        throw error;
+      }
+    };
     this.config.controllers.set(endpoint, controller);
   }
 
