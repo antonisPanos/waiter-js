@@ -7,7 +7,7 @@
   \/_/   \/_/   \/_/\/_/   \/_/     \/_/   \/_____/   \/_/ /_/ 
                                                                
 
-<small><b>A simple module that enables you to perform and handle</br>requests among your apps on the browser.</b></small>
+<small><b>A simple module that enables you to perform and handle<br>requests among your apps on the browser.</b></small>
 </pre>
 
 ## 🧭 Overview
