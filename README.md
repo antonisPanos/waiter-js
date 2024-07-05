@@ -7,19 +7,17 @@
   \/_/   \/_/   \/_/\/_/   \/_/     \/_/   \/_____/   \/_/ /_/ 
                                                                
 
-<small><b>A simple module for handling async requests synchronously <br> throughout your application</b></small>
+<small><b>A simple module that enables you to perform and handle</br>requests among your apps on the browser.</b></small>
 </pre>
 
 ## 🧭 Overview
 
-Waiter is a simple module for handling async requests synchronously throughout your front-end applications.
-
-It allows micro-frontends to handle async requests synchronously, simplifying application flow and data exchange between
+It allows micro-frontends to handle requests and responses, simplifying application flow and data exchange between
 components.
 
 ## 🚀 Features
 
-- **Synchronous requests**: Handles async requests synchronously, simplifying application flow and data exchange between
+- **Dead simple**: Handles requests and responses with a simple interface, simplifying application flow and data exchange between
   components.
 - **Controller-based**: Organizes requests using controllers for better manageability.
 - **Promise-based API**: Facilitates async programming with promises.

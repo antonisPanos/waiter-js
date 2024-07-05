@@ -16,7 +16,7 @@ export type WaiterConfig = {
 };
 
 /**
- * Waiter is a simple module for handling async requests synchronously throughout your application
+ * Waiter is simple module that enables you to perform and handle requests among your apps on the browser.
  * @class Waiter
  */
 export default class Waiter {
