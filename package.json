@@ -29,7 +29,8 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "test": "echo \"Soon...\" && exit 0"
+    "test": "echo \"Soon...\" && exit 0",
+    "prepare": "husky"
   },
   "exports": {
     "types": "./dist/index.d.ts",
