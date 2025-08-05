@@ -25,7 +25,7 @@ export default tseslint.config(
     }
   },
   {
-    ignores: ['node_modules', 'dist', 'index.d.ts']
+    ignores: ['node_modules', 'dist', 'index.d.ts', 'coverage']
   },
   {
     files: ['src/**/*.ts'],
@@ -37,6 +37,28 @@ export default tseslint.config(
       parserOptions: {
         project: 'tsconfig.json'
       }
+    }
+  },
+  {
+    files: ['tests/**/*.ts'],
+    plugins: {
+      '@typescript-eslint': tseslint.plugin
+    },
+    languageOptions: {
+      parser: tseslint.parser,
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.jest
+      },
+      parserOptions: {
+        project: 'tsconfig.test.json'
+      }
+    },
+    rules: {
+      'no-console': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off'
     }
   }
 );

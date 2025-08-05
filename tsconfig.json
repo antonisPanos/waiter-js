@@ -4,11 +4,13 @@
     "declaration": true,
     "declarationDir": "./dist",
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "module": "commonjs",
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
     "target": "esnext"
   },
-  "include": ["src/*.ts"]
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "tests"]
 }
