@@ -25,6 +25,16 @@ components.
 - **TypeScript Support**: Is written in TypeScript and provides type definitions out of the box.
 - **Security Features**: Optional authentication and encryption support for sensitive data protection.
 
+## 🎬 Demo
+
+See Waiter in action:
+- Basic request/response handling between micro-frontends
+- Authentication token protection
+- End-to-end encryption capabilities
+- Real-time message interception visualization
+
+**👉 [Check it out here](https://waiter-demo.vercel.app/) 👈**
+
 ## ⚙️ Installation
 
 ### NPM
