@@ -43,9 +43,9 @@ export default class Waiter {
   /**
    * Creates an instance of Waiter.
    *
-   * @description You can override the default namespace by passing a custom one.c/bre
+   * @description You can override the default namespace by passing a custom one.</br>
    * This can be useful when you want to separate the Waiter configuration between different parts of your application
-   * or if the namespace is already in use.c/bre
+   * or if the namespace is already in use.</br>
    * **Be careful when doing this**, as it can lead to unresolved requests if the namespace is not shared between the
    * parts of your application.
    * @param {WaiterOptions} options Configuration options for Waiter
