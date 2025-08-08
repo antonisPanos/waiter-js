@@ -127,7 +127,9 @@ Provides access to the current Waiter configuration. This is a read-only propert
 
 ## 🔒 Security Features
 
-Waiter supports optional authentication and encryption to protect sensitive data in micro-frontend communications.
+Waiter includes optional authentication and encryption features that provide a basic layer of protection against automated script interception in micro-frontend communications.
+
+> **⚠️ Security Disclaimer:** This is not a robust security solution. The encryption and authentication features are designed primarily to prevent casual interception by automated third-party scripts. Anyone with access to browser developer tools can potentially access the encryption keys, intercept communications, and decrypt the data. For truly sensitive operations, always use server-side validation and never rely solely on client-side security measures.
 
 ### Authentication
 
@@ -164,7 +166,7 @@ const encryptedWaiter = new Waiter({
 encryptedWaiter.createController('sensitiveData', (payload) => {
   // Payload is automatically decrypted before reaching your handler
   console.log('Decrypted payload:', payload);
-  
+
   // Return value is automatically encrypted before sending
   return { secret: 'This will be encrypted' };
 });
@@ -211,6 +213,7 @@ fullySecureWaiter.createController('topSecret', (payload) => {
 - Validate and sanitize all payloads in your controllers
 - Consider server-side validation for critical operations
 - Use authentication for controller management in production environments
+- Resolve encryption keys and auth tokens at runtime from secure sources rather than hardcoding them in your bundle
 
 ## 🤝 Contributing
 
