@@ -82,6 +82,7 @@ export default class Waiter {
    * @param {string} endpoint The name of the endpoint
    * @param {Function} callback The callback function to execute when the endpoint is called
    * @param {string} [authToken] Optional authentication token required to create the controller
+   * @returns {void}
    * @memberof Waiter
    */
   createController(endpoint: string, callback: (payload: any) => any, authToken?: string): void {
@@ -115,6 +116,7 @@ export default class Waiter {
    * ```
    * @param {string} endpointName The name of the endpoint to remove
    * @param {string} [authToken] Optional authentication token required to remove the controller
+   * @returns {void}
    * @memberof Waiter
    */
   removeController(endpointName: string, authToken?: string): void {
@@ -164,6 +166,7 @@ export default class Waiter {
 
   /**
    * Creates the Waiter configuration.
+   * @returns {void}
    * @memberof Waiter
    */
   #createConfig(): void {
@@ -174,6 +177,7 @@ export default class Waiter {
 
   /**
    * Checks if the Waiter configuration already exists.
+   * @returns {boolean}
    * @memberof Waiter
    */
   #hasExistingConfig(): boolean {
