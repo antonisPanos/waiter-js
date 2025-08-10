@@ -2,9 +2,8 @@ import Waiter from '../src/index';
 
 describe('Waiter', () => {
   const authToken = 'test-auth-token';
-  const encryptionKey = '32charactersencryptionkey123456';
 
-  describe('Basic functionality without auth', () => {
+  describe('Basic functionality', () => {
     let waiter: Waiter;
 
     beforeEach(() => {
@@ -35,8 +34,8 @@ describe('Waiter', () => {
       }).toThrow('Endpoint: "nonExistent", not found.');
     });
 
-    it('should throw error for non-existent endpoint request', async () => {
-      await expect(waiter.request('nonExistent', {})).rejects.toThrow('Endpoint: "nonExistent", not found.');
+    it('should throw error for non-existent endpoint request', () => {
+      expect(() => waiter.request('nonExistent', {})).toThrow('[Waiter] Endpoint: "nonExistent", not found.');
     });
 
     it('should handle timeout correctly', async () => {
@@ -50,11 +49,11 @@ describe('Waiter', () => {
     });
   });
 
-  describe('Authentication features', () => {
+  describe('authorization features', () => {
     let secureWaiter: Waiter;
 
     beforeEach(() => {
-      secureWaiter = new Waiter({ authToken });
+      secureWaiter = new Waiter({ token: authToken });
     });
 
     it('should create a controller with correct authToken', () => {
@@ -66,13 +65,13 @@ describe('Waiter', () => {
     it('should not create a controller with invalid authToken', () => {
       expect(() => {
         secureWaiter.createController('invalidEndpoint', () => {}, 'invalid-token');
-      }).toThrow('Invalid authentication token for endpoint: "invalidEndpoint".');
+      }).toThrow('Invalid authorization token for endpoint: "invalidEndpoint".');
     });
 
     it('should not create a controller without authToken when required', () => {
       expect(() => {
         secureWaiter.createController('noTokenEndpoint', () => {});
-      }).toThrow('Invalid authentication token for endpoint: "noTokenEndpoint".');
+      }).toThrow('Invalid authorization token for endpoint: "noTokenEndpoint".');
     });
 
     it('should remove a controller with correct authToken', () => {
@@ -86,51 +85,7 @@ describe('Waiter', () => {
       secureWaiter.createController('secureEndpoint', () => {}, authToken);
       expect(() => {
         secureWaiter.removeController('secureEndpoint', 'invalid-token');
-      }).toThrow('Invalid authentication token for endpoint: "secureEndpoint".');
-    });
-  });
-
-  describe('Encryption features', () => {
-    let encryptedWaiter: Waiter;
-
-    beforeEach(() => {
-      encryptedWaiter = new Waiter({ encryptionKey });
-    });
-
-    it('should handle encryption flow (mocked)', async () => {
-      const testData = { data: 'secret', number: 42 };
-
-      encryptedWaiter.createController('encryptEndpoint', (payload) => {
-        return { response: 'encrypted', input: 'processed' };
-      });
-
-      const result = await encryptedWaiter.request('encryptEndpoint', testData);
-      expect(result).toBeDefined();
-      expect(typeof result).toBe('object');
-    });
-  });
-
-  describe('Combined auth and encryption', () => {
-    let fullySecureWaiter: Waiter;
-
-    beforeEach(() => {
-      fullySecureWaiter = new Waiter({ authToken, encryptionKey });
-    });
-
-    it('should work with both auth and encryption (mocked)', async () => {
-      const testData = { secret: 'classified' };
-
-      fullySecureWaiter.createController(
-        'fullySecure',
-        (payload) => {
-          return { status: 'success', processed: true };
-        },
-        authToken
-      );
-
-      const result = await fullySecureWaiter.request('fullySecure', testData);
-      expect(result).toBeDefined();
-      expect(typeof result).toBe('object');
+      }).toThrow('Invalid authorization token for endpoint: "secureEndpoint".');
     });
   });
 
